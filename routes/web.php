@@ -1,5 +1,7 @@
 <?php
 
+use App\Mail\mailExamen;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,8 +27,8 @@ Route::get('/footer', function() {
     return view('footer');
 });
 
-Route::get('/contact', function() {
-    $correo = new MailPublicitario;
+Route::get('/correo', function() {
+    $correo = new mailExamen;
 
     Mail::to('igonzalezbravo@iessonferrer.net')->send($correo);
 
